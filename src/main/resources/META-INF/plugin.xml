@@ -1,10 +1,12 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<idea-plugin>
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.github.adamglin.wechatminiprogramplugin</id>
-    <name>wechat-miniprogram-plugin Template</name>
+    <name>Wechat MiniProgram Support</name>
     <vendor>adam-glin</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+<!--    <depends>JavaScript</depends>-->
+    <xi:include href="wxml.xml" xpointer="xpointer(/idea-plugin/*)"/>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 

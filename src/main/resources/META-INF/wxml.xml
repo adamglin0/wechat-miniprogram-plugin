@@ -1,0 +1,51 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="WXML" extensions="wxml" language="WXML"
+                  implementationClass="com.github.adamglin.wechatminiprogramplugin.lang.wxml.WXMLFileType"
+                  fieldName="INSTANCE"/>
+        <xml.elementDescriptorProvider
+                implementation="com.zxy.ijplugin.miniprogram.lang.wxml.tag.WXMLElementDescriptorProvider"/>
+        <xml.xmlExtension implementation="com.zxy.ijplugin.miniprogram.lang.wxml.xmlExtension.WxmlXmlExtension"/>
+        <lang.parserDefinition language="WXML"
+                               implementationClass="com.zxy.ijplugin.miniprogram.lang.wxml.parser.WXMLParserDefinition"/>
+        <xml.fileNSInfoProvider
+                implementation="com.zxy.ijplugin.miniprogram.lang.wxml.xmlExtension.WxmlFileNSInfoProvider"/>
+        <xml.tagNameProvider
+                implementation="com.zxy.ijplugin.miniprogram.lang.wxml.tag.WXMLTagNameProvider"/>
+        <completion.contributor id="wxml"
+                                implementationClass="com.zxy.ijplugin.miniprogram.lang.wxml.attributes.WXMLAttributeCompletionContributor"
+                                language="WXML" order="before xmlNonFirst"/>
+        <xml.xmlSuppressionProvider
+                implementation="com.zxy.ijplugin.miniprogram.lang.wxml.inspection.WXMLXmlSuppressionProvider"/>
+        <lang.syntaxHighlighterFactory
+                language="WXML" implementationClass="com.intellij.lang.html.HtmlSyntaxHighlighterFactory"/>
+        <colorProvider
+                implementation="com.zxy.ijplugin.miniprogram.lang.wxml.line_mark.WXMLElementColorProvider"/>
+        <psi.referenceContributor
+                implementation="com.zxy.ijplugin.miniprogram.reference.WXMLReferenceContributor"/>
+        <multiHostInjector implementation="com.zxy.ijplugin.miniprogram.lang.wxml.WxmlJSInjector"/>
+        <multiHostInjector implementation="com.zxy.ijplugin.miniprogram.lang.wxml.WxmlWxsInjector"/>
+        <lang.foldingBuilder language="WXML"
+                             implementationClass="com.zxy.ijplugin.miniprogram.folding.WXMLIncludeTagFolding"/>
+        <lang.findUsagesProvider language="WXML"
+                                 implementationClass="com.zxy.ijplugin.miniprogram.reference.usage.WXMLTemplateFindUsageProvider"/>
+        <gotoSymbolContributor
+                implementation="com.zxy.ijplugin.miniprogram.navigation.WXMLTemplateDefinitionChooseByNameContributor"/>
+        <lang.documentationProvider language="WXML"
+                                    id="WXMLElementDocumentProvider"
+                                    implementationClass="com.zxy.ijplugin.miniprogram.document.WXMLElementDocumentProvider"/>
+        <lang.documentationProvider language="WXML"
+                                    id="WXMLElementAttributeDocumentProvider"
+                                    implementationClass="com.zxy.ijplugin.miniprogram.document.WXMLElementAttributeDocumentProvider"/>
+        <lang.ast.factory language="XML"
+                          implementationClass="com.zxy.ijplugin.miniprogram.lang.wxml.psi.WxmlXmlAstFactory"
+                          order="first"/>
+        <projectService serviceImplementation="com.zxy.ijplugin.miniprogram.lang.wxml.WXMLMetadata"/>
+        <lang.foldingBuilder language="WXML" implementationClass="com.intellij.lang.xml.XmlFoldingBuilder"/>
+        <highlightErrorFilter
+                implementation="com.zxy.ijplugin.miniprogram.lang.wxml.inspection.WXMLStyleInterpolationErrorFilter"/>
+        <lang.formatter
+                implementationClass="com.zxy.ijplugin.miniprogram.lang.wxml.formatter.WXMLFormattingModelBuilder"
+                language="WXML"/>
+    </extensions>
+</idea-plugin>
