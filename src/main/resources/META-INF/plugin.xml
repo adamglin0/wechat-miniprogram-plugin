@@ -2,12 +2,12 @@
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.github.adamglin.wechatminiprogramplugin</id>
     <name>Wechat MiniProgram Support</name>
-    <vendor>adam-glin</vendor>
+    <vendor>adamglin</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-<!--    <depends>JavaScript</depends>-->
-    <xi:include href="wxml.xml" xpointer="xpointer(/idea-plugin/*)"/>
-
+    <depends>JavaScript</depends>
+<!--    <xi:include href="wxml.xml" xpointer="xpointer(/idea-plugin/*)"/>-->
+    <xi:include href="actions.xml" xpointer="xpointer(/idea-plugin/*)"/>-->
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -16,5 +16,6 @@
 
     <applicationListeners>
         <listener class="com.github.adamglin.wechatminiprogramplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.github.adamglin.wechatminiprogramplugin.listener.TestBulkFileListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
     </applicationListeners>
 </idea-plugin>

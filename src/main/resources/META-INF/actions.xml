@@ -1,0 +1,11 @@
+<idea-plugin>
+    <actions>
+        <action id="com.github.adamglin.wechatminiprogramplugin.newAction"
+                class="com.github.adamglin.wechatminiprogramplugin.action.NewAction"
+                text="Create Page"
+                icon=""
+                description="Create all file for wechat page">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
